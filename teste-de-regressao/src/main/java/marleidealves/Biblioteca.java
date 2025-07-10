@@ -62,7 +62,7 @@ public class Biblioteca {
 
     // Método que indica se é patrimônio histórico
     public boolean patrimonioHistorico() {
-        return anoFundacao < 1980;
+        return anoFundacao < 1950;//campo alterado 
     }
 
     // Método acervoPremium: pelo menos 5 livros lançamentos

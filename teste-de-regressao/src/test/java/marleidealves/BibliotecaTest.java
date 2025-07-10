@@ -28,7 +28,7 @@ public class BibliotecaTest {
 
     @Test
     public void testPatrimonioHistoricoTrue() {
-        Biblioteca biblioteca = new Biblioteca("Antiga Biblioteca", "11222333000100", 1975);
+        Biblioteca biblioteca = new Biblioteca("Antiga Biblioteca", "11222333000100", 1945);
         assertTrue(biblioteca.patrimonioHistorico());
     }
 
