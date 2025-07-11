@@ -1,5 +1,7 @@
 package marleidealves;
 
+import java.util.Objects;
+
 public class Especialidade {
     private String nome;
 
@@ -13,5 +15,18 @@ public class Especialidade {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Especialidade)) return false;
+        Especialidade that = (Especialidade) o;
+        return Objects.equals(nome, that.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome);
     }
 }
