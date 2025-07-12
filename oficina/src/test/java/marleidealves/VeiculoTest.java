@@ -34,5 +34,32 @@ public class VeiculoTest {
         Veiculo veiculo = new Veiculo("EEE-5555", "CAMINHAO", 0, 2022);
         assertEquals(2022, veiculo.calculaGarantia()); // sem garantia
     }
+
+      @Test
+    public void testOrdemServicoIncrementaOcorrenciasERegistraMotivo() {
+        // Criando o serviço com id=1, matricula mecânico e placa veículo
+        Servico servico = new Servico(1, "MAT123", "ABC-1234");
+
+        // Inicialmente, numOcorrencias deve ser 0 e motivo null
+        assertEquals(0, servico.getVeiculo().getNumOcorrencias());
+        assertNull(servico.getMotivo());
+
+        // Executa ordemServico
+        servico.ordemServico("Troca de óleo");
+
+        // Depois da execução:
+        // motivo deve ser atualizado
+        assertEquals("Troca de óleo", servico.getMotivo());
+        // numOcorrencias do veículo deve ser incrementado para 1
+        assertEquals(1, servico.getVeiculo().getNumOcorrencias());
+
+        // Executa ordemServico novamente com outro motivo
+        servico.ordemServico("Revisão dos freios");
+
+        // motivo atualizado
+        assertEquals("Revisão dos freios", servico.getMotivo());
+        // numOcorrencias incrementado para 2
+        assertEquals(2, servico.getVeiculo().getNumOcorrencias());
+    }
 }
 
