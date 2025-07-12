@@ -27,9 +27,15 @@ public Mecanico(String matricula) {
     public void adicionarEspecialidade(Especialidade especialidade) {
         this.especialidades.add(especialidade);
     }
-
+    /* 
     public boolean funcionarioPremium() {
         return this.especialidades.size() > 2;
+    }
+    */
+
+    // ✅ NOVA REGRA: premium se tiver mais de uma especialidade
+    public boolean funcionarioPremium() {
+        return this.especialidades.size() > 1;
     }
 
     // Getters

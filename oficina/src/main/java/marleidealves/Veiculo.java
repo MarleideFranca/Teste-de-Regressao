@@ -58,6 +58,11 @@ public class Veiculo {
         this.anoFabricacao = anoFabricacao;
     }
 
+     // ✅ NOVA REGRA: todos os carros têm 2 anos de garantia
+    public int calculaGarantia() {
+        return anoFabricacao + 2;
+    }
+/*
     // Método que calcula o ano de expiração da garantia
     public int calculaGarantia() {
         switch (tipo) {
@@ -73,7 +78,7 @@ public class Veiculo {
         }
 
     }
-
+ */
      // Este método que precisa existir
     public void incrementarOcorrencia() {
         this.numOcorrencias++;

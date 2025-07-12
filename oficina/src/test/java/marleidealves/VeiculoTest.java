@@ -5,17 +5,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class VeiculoTest {
 
-    @Test
-    public void testGarantiaPickup() {
-        Veiculo veiculo = new Veiculo("AAA-1111", "PICKUP", 0, 2020);
-        assertEquals(2025, veiculo.calculaGarantia());
-    }
+   @Test
+public void testGarantiaPickup() {
+    Veiculo veiculo = new Veiculo("AAA-1111", "PICKUP", 0, 2020);
+    assertEquals(2022, veiculo.calculaGarantia()); // ✅ garantia de 2 anos
+}
 
-    @Test
-    public void testGarantiaSUV() {
-        Veiculo veiculo = new Veiculo("BBB-2222", "SUV", 1, 2021);
-        assertEquals(2024, veiculo.calculaGarantia());
-    }
+
+   @Test
+public void testGarantiaSUV() {
+    Veiculo veiculo = new Veiculo("BBB-2222", "SUV", 1, 2021);
+    assertEquals(2023, veiculo.calculaGarantia()); // ✅ correto
+}
+
 
     @Test
     public void testGarantiaPopular() {
@@ -23,17 +25,19 @@ public class VeiculoTest {
         assertEquals(2021, veiculo.calculaGarantia());
     }
 
-    @Test
-    public void testGarantiaTipoMinusculo() {
-        Veiculo veiculo = new Veiculo("DDD-4444", "pickup", 0, 2018);
-        assertEquals(2023, veiculo.calculaGarantia());
-    }
+   @Test
+public void testGarantiaTipoMinusculo() {
+    Veiculo veiculo = new Veiculo("DDD-4444", "pickup", 0, 2018);
+    assertEquals(2020, veiculo.calculaGarantia()); // ✅ atualizado conforme nova regra
+}
+
 
     @Test
-    public void testGarantiaTipoDesconhecido() {
-        Veiculo veiculo = new Veiculo("EEE-5555", "CAMINHAO", 0, 2022);
-        assertEquals(2022, veiculo.calculaGarantia()); // sem garantia
-    }
+public void testGarantiaTipoDesconhecido() {
+    Veiculo veiculo = new Veiculo("EEE-5555", "CAMINHAO", 0, 2022);
+    assertEquals(2024, veiculo.calculaGarantia()); // ✅ atualizado para refletir 2 anos de garantia
+}
+
 
       @Test
     public void testOrdemServicoIncrementaOcorrenciasERegistraMotivo() {

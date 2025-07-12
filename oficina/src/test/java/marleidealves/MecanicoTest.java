@@ -15,14 +15,14 @@ public class MecanicoTest {
         assertTrue(mecanico.funcionarioPremium());
     }
 
-    @Test
-    public void testFuncionarioPremiumComExatamenteDuasEspecialidades() {
-        Mecanico mecanico = new Mecanico("456", "Maria", "MAT002");
-        mecanico.adicionarEspecialidade(new Especialidade("Motor"));
-        mecanico.adicionarEspecialidade(new Especialidade("Elétrica"));
+   @Test
+public void testFuncionarioPremiumComExatamenteDuasEspecialidades() {
+    Mecanico mecanico = new Mecanico("456", "Maria", "MAT002");
+    mecanico.adicionarEspecialidade(new Especialidade("Motor"));
+    mecanico.adicionarEspecialidade(new Especialidade("Elétrica"));
 
-        assertFalse(mecanico.funcionarioPremium());
-    }
+    assertTrue(mecanico.funcionarioPremium()); // ✅correção
+}
 
     @Test
     public void testFuncionarioPremiumSemEspecialidades() {
