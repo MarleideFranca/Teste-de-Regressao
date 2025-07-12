@@ -9,6 +9,11 @@ public class Veiculo {
     private int anoFabricacao;
 
     // Construtor
+    public Veiculo(String placa) {
+        this.placa = placa;
+        this.numOcorrencias = 0;
+    }
+
     public Veiculo(String placa, String tipo, int numOcorrencias, int anoFabricacao) {
         this.placa = placa;
         this.tipo = tipo.toUpperCase(); // normaliza para facilitar a verificação
@@ -37,6 +42,10 @@ public class Veiculo {
         return numOcorrencias;
     }
 
+    public void incrementarOcorrencias() {
+        this.numOcorrencias++;
+    }
+
     public void setNumOcorrencias(int numOcorrencias) {
         this.numOcorrencias = numOcorrencias;
     }
@@ -62,5 +71,17 @@ public class Veiculo {
                 // Se o tipo não for reconhecido, considera sem garantia
                 return anoFabricacao;
         }
+
     }
+
+     // Este método que precisa existir
+    public void incrementarOcorrencia() {
+        this.numOcorrencias++;
+    }
+
+    @Override
+    public String toString() {
+        return "Veículo [placa=" + placa + ", ocorrências=" + numOcorrencias + "]";
+    }
+
 }

@@ -9,11 +9,19 @@ public class Mecanico {
     private String matricula;
     private List<Especialidade> especialidades;
 
-    public Mecanico(String id, String nome, String matricula) {
+//construtor
+public Mecanico(String matricula) {
+    this.matricula = matricula;
+    this.especialidades = new ArrayList<>();
+}
+
+
+      // Outros construtores
+       public Mecanico(String id, String nome, String matricula) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;
-        this.especialidades = new ArrayList<>();
+        this.especialidades = new ArrayList<>(); // ✅ inicialização necessária
     }
 
     public void adicionarEspecialidade(Especialidade especialidade) {
@@ -53,4 +61,6 @@ public class Mecanico {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
+
+  
 }
